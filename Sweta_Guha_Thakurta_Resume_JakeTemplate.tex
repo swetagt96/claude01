@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/jakeryang/resume (Jake Gutierrez / sb2nov)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Sweta Guha Thakurta} \\ \vspace{2pt}
+    \small +91 9836781255 $|$ \href{mailto:swetagt96@gmail.com}{\underline{swetagt96@gmail.com}} $|$
+    \href{https://linkedin.com/in/sweta-03b8b7122}{\underline{linkedin.com/in/sweta-03b8b7122}} $|$
+    \href{https://salesforce.com/trailblazer/swetagt96}{\underline{salesforce.com/trailblazer/swetagt96}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{Senior Salesforce Developer with 7+ years architecting scalable, customer-facing platforms and enterprise integrations across automotive, consulting, and pharmaceutical domains. Deep expertise in LWC, Aura, Apex, Triggers, Flows, and API-led integration, with hands-on experience delivering AI-driven automation using Salesforce Agentforce. Adept at turning complex, ambiguous business problems into reliable, high-performance systems at scale. 5x Salesforce certified.}
+\vspace{-4pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Senior Salesforce Developer}{Sep. 2024 -- Present}
+      {Volvo Group India Pvt. Ltd.}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Independently built an AI-powered Account Insights agent using Salesforce Agentforce and Prompt Builder, auto-summarizing 10 critical account dimensions and reducing manual account-research time for sales reps}
+        \resumeItem{Architected and shipped the Control Center single sign-on (SSO) portal from scratch, unifying Customer Portal, Service Marketplace, Parts, and Aftermarket apps into one login serving 10,000+ dealers and customers globally}
+        \resumeItem{Delivered 25+ production LWC, Apex, Trigger, and Platform Event components at 90\% test coverage, reducing post-release defects and enabling rollback-free deployments}
+        \resumeItem{Drove the Volvo Trucks CRM launch across 40 global regions, owning data migration, security configuration, user access, and release activities with zero critical launch defects}
+        \resumeItem{Designed a reusable Apex framework and shared utility library, standardizing logic across 25+ components and accelerating sprint delivery}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Salesforce Developer}{Apr. 2022 -- Sep. 2024}
+      {Accenture Solutions Pvt. Ltd.}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Engineered a reusable Apex REST framework for real-time cross-org data synchronization, sustaining 99.8\% uptime over 24 months and 10,000 transactions/day across 3 Salesforce environments}
+        \resumeItem{Led development of a Google Maps-integrated Lightning feature surfacing store locations, sales performance, and pricing, giving field teams real-time geographic visibility}
+        \resumeItem{Delivered 12+ LWC, Aura, Apex, Batch, and REST components at 90\%+ test coverage, simplifying complex business processes}
+        \resumeItem{Built automation frameworks with Batch Apex, Flows, and asynchronous processing, cutting manual processing effort by roughly 40\%}
+        \resumeItem{Delivered 3 enterprise REST API integrations including a PCI-conscious payment gateway enabling secure real-time transactions}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Salesforce Developer}{Jun. 2019 -- Apr. 2022}
+      {Wipro Ltd.}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Built an Order Management \& Discounting module in Sales Cloud for a pharmaceutical client, supporting order-processing workflows for 1,000+ sales users}
+        \resumeItem{Developed solutions using Visualforce, Apex, Triggers, Workflow Rules, and Approval Processes, automating business processes and reducing manual effort by roughly 40\%}
+        \resumeItem{Designed 20+ reports and 15+ interactive dashboards for self-serve stakeholder visibility into sales performance}
+        \resumeItem{Optimized performance via governor-limit management and secure coding, achieving releases with zero critical deployment failures}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{AI Account Insights Agent} $|$ \emph{Agentforce, Prompt Builder, Apex}}{Volvo Group}
+          \resumeItemListStart
+            \resumeItem{Designed prompt templates and grounding logic to summarize segmentation, hierarchy, contracts, and service-market insights on demand}
+            \resumeItem{Delivered an automated, trustworthy account-briefing experience for sales reps as an early enterprise Agentforce adoption}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Control Center SSO Portal} $|$ \emph{LWC, Experience Cloud, SSO, Apex}}{Volvo Group}
+          \resumeItemListStart
+            \resumeItem{Unified four dealer/customer applications behind a single sign-on portal used by 10,000+ users globally}
+            \resumeItem{Owned end-to-end design, security model, and Lightning front end from the ground up}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Cross-Org REST Integration Framework} $|$ \emph{Apex REST, Platform Events}}{Accenture}
+          \resumeItemListStart
+            \resumeItem{Built a reusable framework with retry and error handling for real-time synchronization across 3 Salesforce orgs}
+            \resumeItem{Sustained 99.8\% uptime over 24 months while handling up to 10,000 transactions per day}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Apex, JavaScript (ES6+), SOQL, SOSL, Visualforce, HTML/CSS} \\
+     \textbf{Salesforce}{: LWC, Aura, Flows, Triggers, Batch/Queueable/Scheduled Apex, Platform Events, Agentforce, Prompt Builder, Einstein AI, Sales/Service/Experience/Commerce Cloud, CRM Analytics} \\
+     \textbf{Integration}{: REST/SOAP APIs, MuleSoft, Named Credentials, OAuth 2.0, Platform Events} \\
+     \textbf{Developer Tools}{: Salesforce DX, GitHub, GitLab, Azure DevOps, DevOps Center, Copado, CI/CD, Data Loader, Workbench, Postman, VS Code}
+    }}
+ \end{itemize}
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     Salesforce Certified AI Specialist $|$ AI Associate $|$ Platform Developer I $|$ Platform App Builder $|$ Administrator $|$ Copado Fundamentals
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Institute of Engineering and Management}{Kolkata, India}
+      {B.Tech in Electronics \& Communication Engineering}{2019}
+  \resumeSubHeadingListEnd
+
+\end{document}
