@@ -1,0 +1,203 @@
+%-------------------------
+% Resume in Latex
+% Template style: Harshibar (based on https://github.com/jakeryang/resume)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% enabled for pdflatex (ATS-parsable copyable text)
+\input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underline
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% ATS: machine readable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+      \textit{#3} & {\color{dark-grey} \small #4}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}#2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Sweta Guha Thakurta} \\ \vspace{5pt}
+    \small \faPhone* \hspace{2pt} \texttt{+91 9836781255} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \href{mailto:swetagt96@gmail.com}{\texttt{swetagt96@gmail.com}} \hspace{1pt} $|$
+    \hspace{1pt} \faLinkedin \hspace{2pt} \href{https://linkedin.com/in/sweta-03b8b7122}{\texttt{in/sweta-03b8b7122}} \hspace{1pt} $|$
+    \hspace{1pt} \faMapMarker* \hspace{2pt} \texttt{Bangalore, India}
+    \\ \vspace{-3pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+\vspace{4pt}
+\small{Senior Salesforce Developer with 7+ years architecting scalable, customer-facing platforms and enterprise integrations across healthcare, finance, and automotive sectors. Deep expertise in LWC, Aura, Apex, Triggers, Flows, and API-led integration, with hands-on AI-driven automation using Salesforce Agentforce. Adept at turning complex, ambiguous business problems into reliable, high-performance systems at scale. 5x Salesforce certified.}
+\vspace{2pt}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Volvo Group India Pvt. Ltd.}{Sep. 2024 -- Present}
+      {Senior Salesforce Developer}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Independently built an \textbf{AI-powered Account Insights agent} using Salesforce Agentforce and Prompt Builder, auto-summarizing 10 critical account dimensions and reducing manual account-research time for sales reps}
+        \resumeItem{Architected and shipped the \textbf{Control Center single sign-on (SSO) portal} from scratch, unifying Customer Portal, Service Marketplace, Parts, and Aftermarket apps into one login serving \textbf{10,000+ dealers and customers} globally}
+        \resumeItem{Improved release reliability across the CRM platform, \textbf{reducing post-release defects by 60\%} while sustaining \textbf{90\% Apex test coverage}, by building 25+ production LWC, Apex triggers, and Platform Event-driven automations used by 10,000+ users}
+        \resumeItem{Drove the Volvo Trucks CRM launch across \textbf{40 global regions}, owning data migration, security configuration, user access, and release activities with \textbf{zero critical launch defects}}
+        \resumeItem{Designed a reusable Apex framework and shared utility library, standardizing logic across 25+ components and accelerating sprint delivery}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Accenture Solutions Pvt. Ltd.}{Apr. 2022 -- Sep. 2024}
+      {Salesforce Developer}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Engineered a reusable \textbf{Apex REST framework for real-time cross-org data synchronization}, sustaining \textbf{99.8\% uptime over 24 months} and \textbf{10,000 transactions/day} across 3 Salesforce environments}
+        \resumeItem{Led development of a \textbf{Google Maps-integrated Lightning feature} surfacing store locations, sales performance, and pricing, giving field teams real-time geographic visibility}
+        \resumeItem{Delivered 12+ LWC, Aura, Apex, Batch, and REST components at \textbf{90\%+ test coverage}, simplifying complex business processes}
+        \resumeItem{Built automation frameworks with Batch Apex, Flows, and asynchronous processing, \textbf{cutting manual processing effort by ~40\%}}
+        \resumeItem{Delivered 3 enterprise REST API integrations including a PCI-conscious \textbf{payment gateway} enabling secure real-time transactions}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Wipro Ltd.}{Jun. 2019 -- Apr. 2022}
+      {Salesforce Developer}{Bangalore, India}
+      \resumeItemListStart
+        \resumeItem{Built an \textbf{Order Management \& Discounting module} in Sales Cloud for a pharmaceutical client, supporting order-processing workflows for \textbf{1,000+ sales users}}
+        \resumeItem{Developed solutions using Visualforce, Apex, Triggers, Workflow Rules, and Approval Processes, automating business processes and \textbf{reducing manual effort by ~40\%}}
+        \resumeItem{Designed \textbf{20+ reports and 15+ interactive dashboards} for self-serve stakeholder visibility into sales performance}
+        \resumeItem{Optimized performance via governor-limit management and secure coding, achieving releases with \textbf{zero critical deployment failures}}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Apex, JavaScript (ES6+), SOQL, SOSL, Visualforce, HTML/CSS}\vspace{2pt} \\
+     \textbf{Salesforce}{: LWC, Aura, Flows, Triggers, Batch/Queueable/Scheduled Apex, Platform Events, Agentforce, Prompt Builder, Einstein AI, Sales/Service/Experience/Commerce Cloud, CRM Analytics}\vspace{2pt} \\
+     \textbf{Integration \& DevOps}{: REST/SOAP APIs, MuleSoft, Named Credentials, OAuth 2.0, SFDX, GitHub, GitLab, Azure DevOps, DevOps Center, Copado, CI/CD, Data Loader, Workbench, Postman, Agile Scrum}
+    }}
+ \end{itemize}
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICATIONS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     Salesforce Certified AI Specialist $|$ AI Associate $|$ Platform Developer I $|$ Platform App Builder $|$ Administrator $|$ Copado Fundamentals
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Institute of Engineering and Management}{2019}
+      {B.Tech, Electronics \& Communication Engineering}{Kolkata, India}
+  \resumeSubHeadingListEnd
+
+\end{document}
