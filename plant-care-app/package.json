@@ -1,0 +1,13 @@
+{
+  "name": "plant-care-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PlantPal — plant health check & watering app (photo identification + AI care plan)",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "start:server": "npm --prefix server start"
+  }
+}
