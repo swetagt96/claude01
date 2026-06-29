@@ -22,7 +22,9 @@ function urlBase64ToUint8Array(base64String: string): Uint8Array<ArrayBuffer> {
 }
 
 export async function registerServiceWorker(): Promise<ServiceWorkerRegistration | null> {
-  if (!pushSupported()) return null;
+  // Only the service-worker API is required to register (and to be installable
+  // as a PWA). Push support is checked separately before subscribing.
+  if (typeof navigator === "undefined" || !("serviceWorker" in navigator)) return null;
   try {
     return await navigator.serviceWorker.register("/sw.js");
   } catch (err) {

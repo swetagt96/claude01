@@ -80,6 +80,20 @@ VAPID_SUBJECT=mailto:admin@plantpal.example
 | `POST /api/push/subscribe`    | ✓    | Register a push subscription               |
 | `POST /api/push/unsubscribe`  | ✓    | Remove a push subscription                 |
 
+## Install on your phone (Android)
+
+PlantPal is a Progressive Web App, so there's no APK or Play Store download — you
+install it straight from the browser:
+
+1. Host the app over **HTTPS** (deploy it, or use a tunnel like
+   `npx cloudflared tunnel --url http://localhost:5173` while developing).
+2. Open the `https://…` URL in **Chrome on Android**.
+3. Tap **⋮ → Install app** (or "Add to Home screen"). You'll get a PlantPal icon,
+   a splash screen, and a full-screen, app-like experience.
+
+Background push reminders require HTTPS (or `localhost`) and that the app has been
+opened at least once so the service worker can register.
+
 ## Known limitations
 
 - Demo mode returns realistic sample data from a small plant library until an

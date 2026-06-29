@@ -9,6 +9,12 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
 });
 
+// A pass-through fetch handler. Its presence is part of the PWA install
+// criteria; we let the network handle requests normally (no offline caching).
+self.addEventListener("fetch", () => {
+  // intentionally empty — do not call respondWith, so the browser proceeds as usual
+});
+
 self.addEventListener("push", (event) => {
   let data = {};
   try {
