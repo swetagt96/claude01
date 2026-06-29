@@ -1,4 +1,7 @@
 import "dotenv/config";
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import express from "express";
 import cors from "cors";
 import multer from "multer";
@@ -10,6 +13,7 @@ import plantsRouter from "./routes/plants.js";
 import pushRouter from "./routes/push.js";
 import { startScheduler } from "./services/push.js";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = Number(process.env.PORT ?? 4000);
 
@@ -72,6 +76,18 @@ app.post("/api/analyze", upload.single("photo"), async (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/plants", plantsRouter);
 app.use("/api/push", pushRouter);
+
+// In production, serve the built frontend so the whole app runs as one service.
+// CLIENT_DIST can override the location; defaults to ../../client/dist.
+const clientDist = process.env.CLIENT_DIST ?? join(__dirname, "..", "..", "client", "dist");
+if (existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  // SPA fallback: send index.html for any non-API GET route.
+  app.get(/^(?!\/api\/).*/, (_req, res) => {
+    res.sendFile(join(clientDist, "index.html"));
+  });
+  console.log(`📦 Serving frontend from ${clientDist}`);
+}
 
 // Multer / generic error handler.
 app.use(

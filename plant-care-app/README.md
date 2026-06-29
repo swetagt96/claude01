@@ -80,15 +80,34 @@ VAPID_SUBJECT=mailto:admin@plantpal.example
 | `POST /api/push/subscribe`    | ✓    | Register a push subscription               |
 | `POST /api/push/unsubscribe`  | ✓    | Remove a push subscription                 |
 
+## Deploy (get a public HTTPS link)
+
+The server also serves the built frontend, so the whole app runs as **one web
+service**. A [Render](https://render.com) blueprint (`render.yaml`, at the repo root)
+is included. You can do this entirely from a phone browser:
+
+1. Create a free account at [render.com](https://render.com) and connect GitHub.
+2. **New + → Blueprint**, pick this repository. Render reads `render.yaml` and
+   configures a free web service (build + start commands, health check).
+3. Click **Apply / Deploy** and wait for the build to finish.
+4. Render gives you a public URL like `https://plantpal-xxxx.onrender.com` — open
+   that on your phone.
+
+Optional env vars (set in the Render dashboard): `OPENAI_API_KEY` for real AI
+identification, and `VAPID_PUBLIC_KEY` / `VAPID_PRIVATE_KEY`
+(`npx web-push generate-vapid-keys`) so push reminders survive redeploys.
+
+> Free-tier notes: the service sleeps after inactivity (first load can take ~30–50s),
+> and the JSON data store is on ephemeral disk, so accounts/plants reset on redeploy.
+> Add a persistent disk or a real database for production use.
+
 ## Install on your phone (Android)
 
 PlantPal is a Progressive Web App, so there's no APK or Play Store download — you
-install it straight from the browser:
+install it straight from the browser once it's deployed (see **Deploy** above):
 
-1. Host the app over **HTTPS** (deploy it, or use a tunnel like
-   `npx cloudflared tunnel --url http://localhost:5173` while developing).
-2. Open the `https://…` URL in **Chrome on Android**.
-3. Tap **⋮ → Install app** (or "Add to Home screen"). You'll get a PlantPal icon,
+1. Open the deployed `https://…` URL in **Chrome on Android**.
+2. Tap **⋮ → Install app** (or "Add to Home screen"). You'll get a PlantPal icon,
    a splash screen, and a full-screen, app-like experience.
 
 Background push reminders require HTTPS (or `localhost`) and that the app has been

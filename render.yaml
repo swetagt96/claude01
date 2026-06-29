@@ -1,0 +1,28 @@
+# Render Blueprint for PlantPal (https://render.com).
+# Deploys the app as a single free web service that serves both the API and the
+# built frontend over HTTPS. From Render: New + > Blueprint > pick this repo.
+services:
+  - type: web
+    name: plantpal
+    runtime: node
+    plan: free
+    rootDir: plant-care-app
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm run start:server
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # Ensure dev dependencies (TypeScript/Vite) are installed during build.
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
+      - key: NODE_ENV
+        value: production
+      # Optional: set to enable real AI photo identification (else demo mode).
+      - key: OPENAI_API_KEY
+        sync: false
+      # Optional: fixed Web Push keys so reminders survive redeploys.
+      # Generate a pair with:  npx web-push generate-vapid-keys
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
